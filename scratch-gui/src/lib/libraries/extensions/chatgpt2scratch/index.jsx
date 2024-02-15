@@ -16,7 +16,7 @@ const entry = {
   name: 'ChatGPT2Scratch',
   extensionId: 'chatgpt2scratch',
   extensionURL: 'https://tregu148.github.io/chatgpt2scratch.mjs',
-  collaborator: 'tregu148',
+  collaborator: 'tregu148,ichiroc',
   iconURL: chatgpt2scratchIconURL,
   insetIconURL: chatgpt2scratchInsetIconURL,
   description: (
