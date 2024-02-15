@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import chatgpt2scratchIconURL from './chatgpt2scratchaaa.png';
-import chatgpt2scratchInsetIconURL from './chatgpt2scratchaaa-small.png';
+import chatgpt2scratchIconURL from './chatgpt2scratch.png';
+import chatgpt2scratchInsetIconURL from './chatgpt2scratch-small.png';
 
 const translationMap = {
   'ja': {
@@ -13,8 +13,8 @@ const translationMap = {
 };
 
 const entry = {
-  name: 'ChatGPT2Scratchaaa',
-  extensionId: 'chatgpt2scratchaaa',
+  name: 'ChatGPT2Scratch',
+  extensionId: 'chatgpt2scratch',
   extensionURL: 'https://tregu148.github.io/chatgpt2scratchaaa.mjs',
   collaborator: 'tregu148',
   iconURL: chatgpt2scratchIconURL,
@@ -30,7 +30,7 @@ const entry = {
   disabled: false,
   bluetoothRequired: false,
   internetConnectionRequired: true,
-  helpLink: 'https://github.com/tregu148/chatgpt2scratchaaa/',
+  helpLink: 'https://github.com/tregu148/chatgpt2scratch/',
   translationMap: translationMap
 }
 
