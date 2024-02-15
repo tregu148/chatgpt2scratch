@@ -56,7 +56,7 @@ const I18n = {
     },
     'ja': {
         answerBlockText:
-            '[TEXT]の答え',
+            '[TEXT]の答えaaa',
         answerBlockDefaultValue:
             'Scratch が上手くなるには?',
         answerFuncEnterOpenAIApiKey:
