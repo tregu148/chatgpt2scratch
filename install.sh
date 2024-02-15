@@ -4,7 +4,7 @@ LF=$(printf '\\\012_')
 LF=${LF%_}
 EXTENSION_NAME=ChatGPT2Scratch
 EXTENSION_ID=chatgpt2scratch
-COLLABORATOR=tregu148
+COLLABORATOR=ichiroc,tregu148
 EXTENSION_DESCRIPTION="ChatGPT for Scratch"
 
 mkdir -p node_modules/scratch-vm/src/extensions/scratch3_${EXTENSION_ID}
