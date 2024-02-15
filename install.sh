@@ -2,8 +2,8 @@
 
 LF=$(printf '\\\012_')
 LF=${LF%_}
-EXTENSION_NAME=ChatGPT2Scratchaaa
-EXTENSION_ID=chatgpt2scratchaaa
+EXTENSION_NAME=ChatGPT2Scratch
+EXTENSION_ID=chatgpt2scratch
 COLLABORATOR=tregu148
 EXTENSION_DESCRIPTION="ChatGPT for Scratch"
 
