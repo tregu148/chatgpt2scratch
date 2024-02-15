@@ -81,7 +81,7 @@ const I18n = {
     },
     'ja-Hira': {
         answerBlockText:
-            '[TEXT]のこたえ',
+            '[TEXT]のこたえあああ',
         answerBlockDefaultValue:
             'スクラッチがうまくなるには?',
         answerFuncEnterOpenAIApiKey:
