@@ -58,7 +58,7 @@ const I18n = {
         answerBlockText:
             '[TEXT]の答えaaa',
         answerBlockDefaultValue:
-            'Scratch が上手くなるには?',
+            'Scratch が上手くなるには?bbb',
         answerFuncEnterOpenAIApiKey:
             'openai.com のサイトからAPIキーを取得してセットください',
         clearMessageLogsBlockText:
