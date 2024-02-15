@@ -15,7 +15,7 @@ const translationMap = {
 const entry = {
   name: 'ChatGPT2Scratch',
   extensionId: 'chatgpt2scratch',
-  extensionURL: 'https://tregu148.github.io/chatgpt2scratchaaa.mjs',
+  extensionURL: 'https://tregu148.github.io/chatgpt2scratch.mjs',
   collaborator: 'tregu148',
   iconURL: chatgpt2scratchIconURL,
   insetIconURL: chatgpt2scratchInsetIconURL,
