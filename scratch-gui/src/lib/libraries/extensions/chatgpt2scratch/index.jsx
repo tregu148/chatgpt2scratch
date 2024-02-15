@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import chatgpt2scratchIconURL from './chatgpt2scratch.png';
-import chatgpt2scratchInsetIconURL from './chatgpt2scratch-small.png';
+import chatgpt2scratchIconURL from './chatgpt2scratchaaa.png';
+import chatgpt2scratchInsetIconURL from './chatgpt2scratchaaa-small.png';
 
 const translationMap = {
   'ja': {
