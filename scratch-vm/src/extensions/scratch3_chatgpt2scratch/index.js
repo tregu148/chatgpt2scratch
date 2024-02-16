@@ -223,7 +223,7 @@ class Scratch3ChatGPTBlocks {
                     blockType: BlockType.COMMAND,
                     text: "[MODEL]というモデルをセットする",
                     arguments: {
-                        STRING: {
+                        MODEL: {
                             type: ArgumentType.STRING,
                             defaultValue: "gpt-3.5-turbo"
                         }
