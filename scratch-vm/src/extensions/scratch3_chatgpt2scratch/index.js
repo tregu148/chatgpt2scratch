@@ -161,15 +161,15 @@ class Scratch3ChatGPTBlocks {
                 {
                     opcode: 'complete',
                     blockType: BlockType.REPORTER,
-                    text: "system:[SYSTEMPROMPT],user:[USERPROMPT]",
+                    text: "[SYSTEMPROMPT]に、[USERPROMPT]と話しかけたときの返事",
                     arguments: {
                         SYSTEMPROMPT: {
                             type: ArgumentType.STRING,
-                            defaultValue: "You are a helpfull assistant.",
+                            defaultValue: "あなたは、たまという名前の猫です。",
                         },
                         USERPROMPT: {
                             type: ArgumentType.STRING,
-                            defaultValue: "What is Scratch3?",
+                            defaultValue: "あなた、おなまえは？",
                         },
                     }
                 },
