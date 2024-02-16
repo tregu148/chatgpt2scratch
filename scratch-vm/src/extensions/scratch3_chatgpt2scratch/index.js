@@ -217,17 +217,6 @@ class Scratch3ChatGPTBlocks {
                     blockType: BlockType.COMMAND,
                     text: this.i18n.setApiKeyBlockText,
                 },
-                {
-                    opcode: 'sendLineNotification',
-                    blockType: BlockType.COMMAND,
-                    text: "send notification [TEXT]",
-                    arguments: {
-                        TEXT: {
-                            type: ArgumentType.STRING,
-                            defaultValue: 'Hello, this is a test notification from Scratch!'
-                        }
-                    }
-                }
             ],
         };
     }
@@ -338,40 +327,6 @@ class Scratch3ChatGPTBlocks {
 
     setTimeout(args) {
         this.timeout = Number(args.NUMBER);
-    }
-
-    sendLineNotification(args) {
-        const message = Cast.toString(args.TEXT);
-        // window.prompt(message); 
-        const lineNotifyApiUrl = 'https://notify-api.line.me/api/notify';
-        const headers = {
-            "Authorization": `Bearer rqle1CJFrdOVgiRT7rGMfYShDZxcLYFPZgihAv3TRj4`,
-            "Content-Type": "application/x-www-form-urlencoded"
-        };
-
-        // const body = {
-        //     message: message
-        // };
-
-        return fetchWithTimeout(lineNotifyApiUrl, {
-            method: 'POST',
-            headers: headers,
-            body: new URLSearchParams({ 'message': message })
-        }, 5000) // 5-second timeout
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Notification failed');
-            }
-            return response.text();
-        })
-        .then(text => {
-            window.prompt(text);
-            log.info(`LINE notification sent successfully: ${text}`);
-        })
-        .catch(err => {
-            window.prompt('error'+err.message);
-            log.error('Failed to send LINE notification', err);
-        });
     }
 }
 
