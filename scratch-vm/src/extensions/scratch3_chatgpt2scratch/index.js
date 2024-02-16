@@ -165,7 +165,7 @@ class Scratch3ChatGPTBlocks {
                     arguments: {
                         SYSTEMPROMPT: {
                             type: ArgumentType.STRING,
-                            defaultValue: "あなたは、たまという名前の猫です。",
+                            defaultValue: "あなたは、たまという名前の猫をロールプレイします。",
                         },
                         USERPROMPT: {
                             type: ArgumentType.STRING,
