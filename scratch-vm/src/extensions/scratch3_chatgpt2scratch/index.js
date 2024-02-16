@@ -159,6 +159,21 @@ class Scratch3ChatGPTBlocks {
                     }
                 },
                 {
+                    opcode: 'complete',
+                    blockType: BlockType.REPORTER,
+                    text: "system:[SYSTEMPROMPT],user:[USERPROMPT]",
+                    arguments: {
+                        SYSTEMPROMPT: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "You are a helpfull assistant.",
+                        },
+                        USERPROMPT: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "What is Scratch3?",
+                        },
+                    }
+                },
+                {
                     opcode: 'clearMessageLogs',
                     blockType: BlockType.COMMAND,
                     text: this.i18n.clearMessageLogsBlockText,
@@ -205,7 +220,9 @@ class Scratch3ChatGPTBlocks {
             ],
         };
     }
-
+    complete(args){
+        return '実装が完了しました。';
+    }
     answer(args) {
         if (this.apiKey === this.i18n.setApiKeyBlockDefaultValue || this.apiKey === '') {
             return this.i18n.answerFuncEnterOpenAIApiKey
