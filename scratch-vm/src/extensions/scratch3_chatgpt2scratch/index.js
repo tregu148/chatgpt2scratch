@@ -121,6 +121,7 @@ class Scratch3ChatGPTBlocks {
         this.runtime = runtime;
         this.apiKey = window.sessionStorage.getItem(this.SESSION_STORAGE_KEY_CHATGPT_API_KEY) || '';
         this.maxTokens = 300;
+        this.model = "gpt-3.5-turbo"
         this.temperature = 1;
         this.timeout = 30000;
         this._initMessageLog();
@@ -217,6 +218,17 @@ class Scratch3ChatGPTBlocks {
                     blockType: BlockType.COMMAND,
                     text: this.i18n.setApiKeyBlockText,
                 },
+                {
+                    opcode: 'setModel',
+                    blockType: BlockType.COMMAND,
+                    text: "[MODEL]というモデルをセットする",
+                    arguments: {
+                        STRING: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "gpt-3.5-turbo"
+                        }
+                    }
+                },
             ],
         };
     }
@@ -238,7 +250,7 @@ class Scratch3ChatGPTBlocks {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: "gpt-3.5-turbo",
+                model: this.model,
                 messages: [
                     systemMessage,
                     userMessage
@@ -327,6 +339,10 @@ class Scratch3ChatGPTBlocks {
 
     setTimeout(args) {
         this.timeout = Number(args.NUMBER);
+    }
+
+    setTimeout(args) {
+        this.model = Cast.toString(args.MODEL);
     }
 }
 
