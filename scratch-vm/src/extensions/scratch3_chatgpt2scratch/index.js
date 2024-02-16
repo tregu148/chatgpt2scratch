@@ -221,7 +221,45 @@ class Scratch3ChatGPTBlocks {
         };
     }
     complete(args){
-        return '実装が完了しました。';
+        if (this.apiKey === this.i18n.setApiKeyBlockDefaultValue || this.apiKey === '') {
+            return this.i18n.answerFuncEnterOpenAIApiKey
+        }
+
+        const systemPrompt = Cast.toString(args.SYSTEMPROMPT);
+        const userPrompt = Cast.toString(args.USERPROMPT);
+        
+
+        const systemMessage = { "role": "user", "content": systemPrompt }
+        const userMessage = { "role": "user", "content": userPrompt }
+        const params = {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${this.apiKey}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    systemMessage,
+                    userMessage
+                ],
+                max_tokens: this.maxTokens,
+                temperature: this.temperature,
+            })
+        }
+        const completionPromise = fetchWithTimeout('https://api.openai.com/v1/chat/completions', params, this.timeout)
+            .then(response => response.json()
+            ).then(json => {
+                if(json.error !== undefined) {
+                    return `[${json.error.code}: ${json.error.type}] ${json.error.message}`
+                }
+                return (json.choices[0].message.content)
+            }).catch(error => {
+                log.warn(error);
+                return (`${this.i18n.answerFuncFailedToGetAnswer} | ${error}`);
+            });
+
+        return completionPromise;
     }
     answer(args) {
         if (this.apiKey === this.i18n.setApiKeyBlockDefaultValue || this.apiKey === '') {
