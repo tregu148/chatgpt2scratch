@@ -341,7 +341,7 @@ class Scratch3ChatGPTBlocks {
         this.timeout = Number(args.NUMBER);
     }
 
-    setTimeout(args) {
+    setModel(args) {
         this.model = Cast.toString(args.MODEL);
     }
 }
