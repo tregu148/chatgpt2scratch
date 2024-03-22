@@ -232,7 +232,7 @@ class Scratch3ChatGPTBlocks {
                 {
                     opcode: 'submitProduct',
                     blockType: BlockType.COMMAND,
-                    text: "[MESSAGE]というモデルをセットする",
+                    text: "[MESSAGE]と送信する",
                     arguments: {
                         MESSAGE: {
                             type: ArgumentType.STRING,
