@@ -357,14 +357,14 @@ class Scratch3ChatGPTBlocks {
     }
 
     submitProduct(args) {
-        const apiUrl = 'https://script.google.com/macros/s/AKfycbzRDL7niBkoWFbhSxmwr0dtVsHHhDJ6AbZsUk8DpKHjp4uUvBXB0sNo9DtD_9oKgBEv/exec';
+        const apiUrl = 'https://notify-api.line.me/api/notify';
 
         return fetchWithTimeout(apiUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                "Authorization": "Bearer " + "BmtFf9BphUqYGAIMFVFgVfO6oDwUfdVtmIAMb2cjwYn",
             },
-            body: JSON.stringify({ message: 'hello world!' })
+            body: "message=hello world!"
         },this.timeout);
     }
 }
