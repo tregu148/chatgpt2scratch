@@ -229,6 +229,17 @@ class Scratch3ChatGPTBlocks {
                         }
                     }
                 },
+                {
+                    opcode: 'submitProduct',
+                    blockType: BlockType.COMMAND,
+                    text: "[MESSAGE]というモデルをセットする",
+                    arguments: {
+                        MESSAGE: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "hello world"
+                        }
+                    }
+                },
             ],
         };
     }
@@ -343,6 +354,18 @@ class Scratch3ChatGPTBlocks {
 
     setModel(args) {
         this.model = Cast.toString(args.MODEL);
+    }
+
+    submitProduct(args) {
+        const apiUrl = 'https://script.google.com/macros/s/AKfycbzRDL7niBkoWFbhSxmwr0dtVsHHhDJ6AbZsUk8DpKHjp4uUvBXB0sNo9DtD_9oKgBEv/exec';
+
+        return fetchWithTimeout(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: 'hello world!' })
+        },this.timeout);
     }
 }
 
